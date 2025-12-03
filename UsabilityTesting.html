@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Felix Silva - Usability Testing Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title">Felix Silva - Usability Testing Website</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#heuristic">Heuristic Eval</a></li>
+          <li><a href="#personas">Personas</a></li>
+          <li><a href="#test-plan">Test Plan</a></li>
+          <li><a href="#moderator-script">Moderator Script</a></li>
+          <li><a href="#user-videos">User Videos</a></li>
+          <li><a href="#findings">Findings</a></li>
+          <li><a href="#recommendations">Recommendations</a></li>
+          <li><a href="#reflection">Self Reflection</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME PAGE -->
+    <section id="home">
+      <h1>Home</h1>
+
+      <h2>Introduction</h2>
+      <p>
+        For this usability testing project, I selected the <strong>Steam Store website</strong>
+        (<a href="https://store.steampowered.com/" target="_blank">store.steampowered.com</a>).
+        Steam is one of the largest digital stores for PC gaming, with thousands of games, social
+        features, reviews, wishlists, and personalized recommendations.
+      </p>
+
+      <p>
+        I chose Steam because it is a busy, complex site with many different user goals. People
+        browse for new games, search for specific titles, compare prices, read reviews, manage their
+        wishlists, and buy games. Since the site is so active and has so many features, it is a good
+        candidate for usability testing. Even small issues can affect how easily users find what they
+        need.
+      </p>
+
+      <p>
+        The purpose of this assignment is to build a clear understanding of the <strong>usability
+        testing process</strong>. This website walks through each step, starting with a heuristic
+        evaluation, then creating personas, writing scenarios, planning the test, moderating the
+        sessions, reviewing the results, and making recommendations for improving the Steam Store.
+      </p>
+
+      <h3>Reference Text</h3>
+      <p>
+        The project follows the format from <em>Usability Testing Essentials</em>, using the chapters
+        on planning, running, and analyzing usability tests to guide the work on a real website.
+      </p>
+    </section>
+
+    <!-- HEURISTIC EVALUATION -->
+    <section id="heuristic">
+      <h1>Heuristic Evaluation</h1>
+
+      <p><strong>Website:</strong> Steam Store (store.steampowered.com)</p>
+      <p><strong>Evaluator:</strong> Felix Silva</p>
+      <p><strong>Date:</strong> 11/25/2025</p>
+
+      <h2>Heuristic Evaluation Table</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Heuristic Violated</th>
+            <th>Problem Definition</th>
+            <th>Detailed Explanation</th>
+            <th>Severity</th>
+            <th>Screenshot / Documentation</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- ISSUE 1 -->
+          <tr>
+            <td>1</td>
+            <td>Aesthetic and minimalist design</td>
+            <td>Homepage is visually crowded and hard to scan.</td>
+            <td>
+              The homepage shows several large carousels, sale banners, recommendation rows, and promotional blocks.
+              There is little visual hierarchy, and it is easy to scroll past sections without really understanding 
+              them. This can slow down both new and experienced users.
+            </td>
+            <td>Critical</td>
+            <td>
+              <img src="images/heuristic/1_homepage.png" alt="Steam homepage clutter" class="heuristic-img">
+            </td>
+          </tr>
+
+          <!-- ISSUE 2 -->
+          <tr>
+            <td>2</td>
+            <td>Match between system and the real world</td>
+            <td>Steam specific labels are not clear to new users.</td>
+            <td>
+              Labels like “Discovery Queue” and “Curator Recommendations” use Steam-specific terminology without 
+              any short explanation. A new user may not know what these do or why they should click them.
+            </td>
+            <td>Major</td>
+            <td>
+              <img src="images/heuristic/2_labels.png" alt="Steam navigation labels" class="heuristic-img">
+            </td>
+          </tr>
+
+          <!-- ISSUE 3 -->
+          <tr>
+            <td>3</td>
+            <td>User control and freedom</td>
+            <td>Users cannot easily exit the Discovery Queue flow.</td>
+            <td>
+              Once inside the Discovery Queue, users are pushed through a sequence of games. There is no obvious 
+              exit control in the view itself, so users rely on the browser or unrelated navigation. This reduces 
+              the sense of control.
+            </td>
+            <td>Major</td>
+            <td>
+              <img src="images/heuristic/3_queue.png" alt="Discovery Queue page" class="heuristic-img">
+            </td>
+          </tr>
+
+          <!-- ISSUE 4 -->
+          <tr>
+            <td>4</td>
+            <td>Consistency and standards</td>
+            <td>Game tiles present information inconsistently.</td>
+            <td>
+              Some tiles highlight discounts, others screenshots, others tags or reviews. Layout and emphasis vary 
+              between sections, making scanning and comparing games harder.
+            </td>
+            <td>Minor</td>
+            <td>
+              <img src="images/heuristic/4_tiles.png" alt="Game tile inconsistencies" class="heuristic-img">
+            </td>
+          </tr>
+
+          <!-- ISSUE 5 -->
+          <tr>
+            <td>5</td>
+            <td>Recognition rather than recall</td>
+            <td>Filtering tools are hard to find and appear only on certain pages.</td>
+            <td>
+              Filtering tools do not appear consistently across Steam. On major categories like Action or RPG, no
+              filters are shown at all. To access actual filters, the user must go to specific lists such as 
+              “Top Sellers” or “New and Trending.” Only there does a filter panel appear on the right side. Users 
+              must remember which sections support filtering instead of recognizing it naturally. This slows 
+              navigation and can confuse new users.
+            </td>
+            <td>Major</td>
+            <td>
+              <img src="images/heuristic/5_filters.png" alt="Filters only visible on Top Sellers page" class="heuristic-img">
+            </td>
+          </tr>
+
+          <!-- ISSUE 6 -->
+          <tr>
+            <td>6</td>
+            <td>Help users recognize, diagnose, and recover from errors</td>
+            <td>Important system requirement warnings can appear too far down the page.</td>
+            <td>
+              On full game pages, important warnings like third-party account requirements or online-only 
+              restrictions appear near the bottom of the long description area. Since Steam pages are dense, 
+              these warnings can be easy to miss if a user does not scroll far enough. Although the information 
+              is provided, it is not shown near key decision points such as the purchase button.
+            </td>
+            <td>Major</td>
+            <td>
+              <img src="images/heuristic/6_requirements.png" alt="System requirement warning placement" class="heuristic-img">
+            </td>
+          </tr>
+
+          <!-- ISSUE 7 -->
+          <tr>
+            <td>7</td>
+            <td>Error prevention</td>
+            <td>Wishlist actions are easy to miss or misinterpret.</td>
+            <td>
+              Adding or removing an item from the wishlist only changes a small icon. There is no confirmation 
+              or undo message. Users may not notice if the action worked, leading to repeated clicks or 
+              accidental changes.
+            </td>
+            <td>Minor</td>
+            <td>
+              <img src="images/heuristic/7_wishlist.png" alt="Wishlist action feedback" class="heuristic-img">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Summary of Issues Identified</h2>
+      <p>
+        The heuristic evaluation revealed several usability issues across the Steam Store. 
+        The homepage is visually dense and difficult to scan, terminology is not always clear to new users, and filtering tools appear inconsistently across pages. 
+        Users also have limited control within the Discovery Queue, game tiles present information inconsistently, and important warnings are placed too far down the page. 
+        Feedback for wishlist actions is minimal and easy to miss. 
+        These issues indicate recurring problems with clarity, <em>consistency</em>, and user control.
+      </p>
+    </section>
+
+    <!-- PERSONAS -->
+    <section id="personas">
+      <h1>Two Personas</h1>
+
+      <div class="two-column">
+        <div class="persona-card">
+          <div class="persona-header">
+            <h2>Persona 1 - Alex Martinez</h2>
+            <span class="tag"><em>New PC Gamer</em></span>
+          </div>
+          
+          <img 
+            src="https://media.kingston.com/kingston/opengraph/ktc-opengraph-blog-pc-performance-beyond-gaming-maximize-laptop-potential.jpg" 
+            alt="24-year-old PC gamer" 
+            style="width:100%; border-radius:4px; margin-bottom:0.75rem;"
+          >
+
+          <p><strong>Demographics:</strong> 24 years old, lives with roommates, recent college graduate.</p>
+          <p><strong>Job / main activity:</strong> Entry-level marketing coordinator.</p>
+          <p><strong>Goals:</strong></p>
+          <ul>
+            <li>Find affordable games that run well on a mid-level laptop.</li>
+            <li>Quickly understand what a game is about and whether it is worth buying.</li>
+            <li>Take advantage of sales without feeling overwhelmed.</li>
+          </ul>
+          <p><strong>Environment:</strong> Uses Steam at home on a laptop while multitasking.</p>
+          <p><strong>Technical / product expertise:</strong></p>
+          <ul>
+            <li>Comfortable with websites and social media.</li>
+            <li>New to PC gaming and the Steam ecosystem.</li>
+            <li>Still learning terms like curators, Discovery Queue, and tags.</li>
+          </ul>
+          <p class="quote">
+            <em>“I just want to quickly find a game I'll actually like without digging through a million confusing pages.”</em>
+          </p>
+        </div>
+
+        <div class="persona-card">
+          <div class="persona-header">
+            <h2>Persona 2 - Jordan Lee</h2>
+            <span class="tag"><em>Experienced Steam User</em></span>
+          </div>
+          
+          <img 
+            src="https://st.depositphotos.com/12149500/55040/i/450/depositphotos_550404736-stock-photo-young-year-old-gamer-sitting.jpg" 
+            alt="33-year-old gamer at desk" 
+            style="width:100%; border-radius:4px; margin-bottom:0.75rem;"
+          >
+
+          <p><strong>Demographics:</strong> 33 years old, long-time PC gamer, lives with partner.</p>
+          <p><strong>Job / main activity:</strong> Software developer.</p>
+          <p><strong>Goals:</strong></p>
+          <ul>
+            <li>Browse sale events efficiently with filters and tags.</li>
+            <li>Manage a large wishlist without losing track.</li>
+            <li>Quickly see relevant and highly rated games.</li>
+          </ul>
+          <p><strong>Environment:</strong> Uses Steam on a desktop PC or TV.</p>
+          <p><strong>Technical / product expertise:</strong></p>
+          <ul>
+            <li>Very comfortable with software and game launchers.</li>
+            <li>Has used Steam for many years with a large library.</li>
+            <li>Understands advanced features but dislikes clutter.</li>
+          </ul>
+          <p class="quote">
+            <em>“I know what I like. Just give me powerful filters and a clean way to sort through sales without all the noise.”</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEST PLAN -->
+    <section id="test-plan">
+      <h1>Test Plan</h1>
+      <p class="subtle">Scenarios, tasks, goals, scope, pre-test questionnaire</p>
+
+      <h2>Test Goals</h2>
+      <p>
+        The goal of this usability test is to evaluate how effectively and efficiently users can
+        discover, evaluate, and manage games on the Steam Store. The test is guided by the 5 Es:
+      </p>
+      <ul>
+        <li><strong>Effective:</strong> Can users complete core tasks.</li>
+        <li><strong>Efficient:</strong> How much time/effort tasks require.</li>
+        <li><strong>Engaging:</strong> Whether users stay interested.</li>
+        <li><strong>Error-tolerant:</strong> How well the site prevents mistakes.</li>
+        <li><strong>Easy to learn:</strong> How quickly new users understand the site.</li>
+      </ul>
+
+      <h2>Scope, Participants, and Session Length</h2>
+      <ul>
+        <li><strong>Scope:</strong> Steam Store homepage, search results, categories, and game pages.</li>
+        <li><strong>Participants:</strong> 3 users.</li>
+        <li><strong>Session length:</strong> About 45 minutes each.</li>
+        <li><strong>Format:</strong> Remote screen sharing with audio and recording.</li>
+      </ul>
+
+      <h2>Scenario 1 - Alex (New PC Gamer)</h2>
+      <p>
+        Alex recently started gaming on PC and wants to find a new game to play over the weekend.
+        They have a limited budget and a mid-range laptop. They want to browse the Steam Store and
+        find something on sale that matches their interests and runs well on their system.
+      </p>
+
+      <h3>Tasks for Scenario 1</h3>
+      <ul>
+        <li>Find a game under $20 that looks interesting and add it to your wishlist.</li>
+        <li>Use search or browsing to find a game in a genre you enjoy.</li>
+        <li>Check if your computer can run the game by viewing system requirements.</li>
+        <li>Locate user reviews and identify the overall rating.</li>
+      </ul>
+
+      <h2>Scenario 2 - Jordan (Experienced Steam User)</h2>
+      <p>
+        Jordan has used Steam for years and wants to quickly look through a major sale event. They
+        want to find high-discount games in genres they enjoy, avoid duplicates, and stay within a
+        budget. They use filters, tags, and wishlists to help pick what to buy.
+      </p>
+
+      <h3>Tasks for Scenario 2</h3>
+      <ul>
+        <li>Navigate to the current sale or discounts page.</li>
+        <li>Filter games by a preferred genre and apply an additional filter.</li>
+        <li>Find a game worth considering and add it to your wishlist or cart.</li>
+        <li>Compare two games and decide which one you would choose.</li>
+      </ul>
+
+      <h2>Pre-Test Questionnaire</h2>
+      <ul>
+        <li>How often do you play video games in a typical week?</li>
+        <li>How familiar are you with Steam?</li>
+        <li>What devices do you usually use for gaming?</li>
+        <li>How comfortable are you with online purchasing?</li>
+        <li>What types of games do you usually enjoy?</li>
+        <li>Have you used the Steam Store website before today?</li>
+      </ul>
+    </section>
+
+    <!-- MODERATOR SCRIPT -->
+    <section id="moderator-script">
+      <h1>Moderator Script</h1>
+      <p class="subtle">Script used for all three sessions</p>
+
+      <h2>Introduction</h2>
+      <p><strong>Moderator:</strong> “Hi, my name is Felix. Today I'll be walking you through a usability session focused on the Steam Store website. Thanks for taking the time to help with this.”</p>
+
+      <h2>Purpose and Consent</h2>
+      <p>
+        “Before we start, I want to explain the purpose of this session. I'm testing the website, not you. 
+        There are no right or wrong answers here. I just want to see how people naturally use the Steam Store 
+        and where things feel smooth or confusing. This session will be recorded so I can review it later, 
+        but the recording is only for this assignment.”
+      </p>
+
+      <h2>Warm-Up</h2>
+      <p>
+        “Before we get into the tasks, I want you to get comfortable talking through what you're thinking. 
+        This helps me understand your choices and reactions.”
+       <ul>
+        <li>“What's the last game you played or bought online?”</li>
+        <li>“How often do you use Steam or other game stores?”</li>
+        <li>“Do you usually browse for games or go straight to something you already know?”</li>
+      </ul>
+      <p>“Great. These help me understand your general habits before we start.”</p>
+
+
+      <h2>Think-Aloud Instructions</h2>
+      <p>
+        “Throughout the session, I'd like you to think aloud. Say whatever comes to mind as you're doing the tasks. 
+        Tell me what you're expecting, what makes sense, and what doesn't. Even if it feels obvious, just say it out loud. 
+        I'm not judging your decisions, I just want insight into your thought process.”
+      </p>
+
+      <h2>Reminder of Neutrality</h2>
+      <p>
+        “I won't be able to guide you unless you get completely stuck. If I stay quiet, it's on purpose. 
+        I'm taking notes and letting you work through the tasks naturally. 
+        If you're stuck and not sure what to do next, just say so and I'll give you a small nudge so we can keep going.”
+      </p>
+
+      <h2>Pre-Test Questions</h2>
+      <p>Ask the questions from the pre-test questionnaire.</p>
+
+      <h2>Task Instructions</h2>
+      <p>
+        “I'll be giving you a few tasks based on common things people do on the Steam Store. 
+        I'll read each one out loud, and I'll also paste them into the chat so you can refer back to them if needed. 
+        Remember to think aloud as you work through the tasks.”
+      </p>
+
+      <h3>Example Tasks</h3>
+      <ul>
+        <li>“You want to find a game under $20 that looks interesting. Use the Steam Store to find one and add it to your wishlist.”</li>
+        <li>“Filter a list of games by genre and then sort them by user reviews.”</li>
+        <li>“Open a game page and find the system requirements.”</li>
+        <li>“Find where Steam explains its refund policy.”</li>
+        <li>“Locate a recently released game on the site.”</li>
+        <li>"Find information about Steam's VR hardware products"</li>
+        <li>“Find where to purchase Steam gift cards or wallet codes.”</li>
+        <li>“Locate games that are compatible with SteamOS/Linux.”</li>
+      </ul>
+
+      <h2>During the Session</h2>
+      <p>If the participant goes silent or needs a prompt, use:</p>
+      <ul>
+        <li>“What are you looking for right now?”</li>
+        <li>“What did you expect to happen when you clicked that?”</li>
+        <li>“What are you trying to do next?”</li>
+        <li>“Is this what you thought you would see?”</li>
+      </ul>
+
+      <h2>Post-Test Questions</h2>
+      <p>After all tasks are complete:</p>
+      <ul>
+        <li>“How easy or difficult were the tasks?”</li>
+        <li>“Which parts felt confusing or unclear?”</li>
+        <li>“Was anything missing that you expected to find?”</li>
+        <li>“If you could fix one thing on the Steam Store, what would it be?”</li>
+      </ul>
+
+      <h2>Closing</h2>
+      <p>
+        “That's everything for today. Thank you again for your time. Your feedback is really helpful. 
+        Before we wrap up, do you have any final thoughts or anything you want to add about your experience using the Steam Store?”
+      </p>
+    </section>
+
+
+    <!-- USER VIDEOS -->
+    <section id="user-videos">
+      <h1>User Videos</h1>
+
+      <h2>User Description Summary</h2>
+      <p>
+        These three participants were selected to reflect a range of Steam experience levels, from a newer user to a long-time PC gamer. Their backgrounds helped highlight different strengths and weaknesses of the Steam Store interface.
+      </p>
+
+      <p>
+        <strong>User 1:</strong> Experienced Steam user, casual gamer, familiar with browsing and buying.<br>
+        <strong>User 2:</strong> New to Steam, plays games occasionally, less comfortable with PC platforms.<br>
+        <strong>User 3:</strong> Heavy PC gamer, very familiar with Steam and similar game stores.
+      </p>
+
+      <h2>User #1</h2>
+      <p><strong>Participant summary:</strong>  
+        23 years old. Casual gamer who plays a few times a week. Has used Steam for about 11 years. Very comfortable with the platform. Quickly located most information. Had small difficulties finding the filter menu and sorting options. Noted that the Steam catalog layout changes depending on the page, which made browsing feel inconsistent.
+      </p>
+      <iframe src="https://www.youtube.com/embed/uOVnABa6eEw"></iframe>
+
+      <h2>User #2</h2>
+      <p><strong>Participant summary:</strong>  
+        Plays games occasionally, mostly with family. Uses PC and Nintendo Switch. Has never used Steam before. Looked for genres under “Preferences” because it felt like the right place. Had trouble finding system requirements because they are buried in the page. Had the hardest time finding the refund policy and needed direction to locate it. Overall found basic tasks easy, but refund policy visibility was a major issue.
+      </p>
+      <iframe src="https://www.youtube.com/embed/EQ4RVelqE1s"></iframe>
+
+      <h2>User #3</h2>
+      <p><strong>Participant summary:</strong>  
+        Plays games almost every day. Very familiar with PC gaming and Steam. Likes FPS and MOBAs. Still struggled to find the price filter because options are not obvious. Also found genre sorting slightly out of the way. System requirements were easy. Refund policy was not obvious, even for an advanced user. Gift cards and wallet codes were harder to locate than expected. SteamOS/Linux games were also not clearly presented.
+      </p>
+      <iframe src="https://www.youtube.com/embed/mfgz9PeWC8E"></iframe>
+    </section>
+
+    <!-- FINDINGS -->
+    <section id="findings">
+      <h1>Findings</h1>
+
+      <h2>Top Findings Overview</h2>
+      <p>Across all participants several common patterns appeared:</p>
+      <ul>
+        <li>The homepage feels cluttered and makes it hard to pick a starting point.</li>
+        <li>Filtering tools are not always visible or easy to find, especially price filters.</li>
+        <li>Steam-specific language and sections confuses less experienced users.</li>
+        <li>Refund policy is <strong>not easy</strong> to find for <em>any</em> participant.</li>
+        <li>Some sections (SteamOS/Linux, gift cards) are placed in unexpected locations.</li>
+      </ul>
+
+      <h2>User #1 - Findings</h2>
+      <p><strong>Summary:</strong> Experienced Steam user. Completed tasks quickly but still had small navigation hiccups.</p>
+      <ul>
+        <li>
+          Had trouble finding filters and sorting options - 
+          <a href="https://www.youtube.com/watch?v=uOVnABa6eEw&t=268s" target="_blank">4:28</a>
+        </li>
+
+        <li>
+          Needed several steps to locate refund policy - 
+          <a href="https://www.youtube.com/watch?v=uOVnABa6eEw&t=437s" target="_blank">7:17-8:39</a>
+        </li>
+
+        <li>
+          Wished category pages used a more compact catalog UI - 
+          <a href="https://www.youtube.com/watch?v=uOVnABa6eEw&t=660s" target="_blank">11:00-11:36</a>
+        </li>
+      </ul>
+
+      <h2>User #2 - Findings</h2>
+      <p><strong>Summary:</strong> New Steam user with no prior experience. Navigated well but struggled with hidden features and unclear terminology.</p>
+      <ul>
+        <li>
+          Slow to locate genre filters and sorting options - 
+          <a href="https://www.youtube.com/watch?v=EQ4RVelqE1s&t=350s" target="_blank">5:50-6:37</a>
+        </li>
+        <li>
+          Needed multiple attempts and menu changes to find refund policy - 
+          <a href="https://www.youtube.com/watch?v=EQ4RVelqE1s&t=569s" target="_blank">9:29-14:40</a>
+        </li>
+        <li>
+          Tried several unrelated sections before locating new releases - 
+          <a href="https://www.youtube.com/watch?v=EQ4RVelqE1s&t=957s" target="_blank">15:57-16:42</a>
+        </li>
+        <li>
+          VR hardware information found easily once reaching the hardware page - 
+          <a href="https://www.youtube.com/watch?v=EQ4RVelqE1s&t=1070s" target="_blank">17:50-18:45</a>
+        </li>
+        <li>
+          Noted that the refund policy should be more visible - 
+          <a href="https://www.youtube.com/watch?v=EQ4RVelqE1s&t=1380s" target="_blank">23:00-23:34</a>
+        </li>
+      </ul>
+
+      <h2>User #3 - Findings</h2>
+      <p><strong>Summary:</strong> Very experienced Steam user who navigated quickly but still struggled with several buried or unclear features.</p>
+      <ul>
+        <li>
+          Had difficulty locating price filters for games under $20 - 
+          <a href="https://www.youtube.com/watch?v=mfgz9PeWC8E&t=290s" target="_blank">4:50-5:20</a>
+        </li>
+        <li>
+          Genre filtering and finding “Top Rated” sorting took extra steps - 
+          <a href="https://www.youtube.com/watch?v=mfgz9PeWC8E&t=480s" target="_blank">8:00-9:10</a>
+        </li>
+        <li>
+          Refund policy extremely hard to locate, required search bar - 
+          <a href="https://www.youtube.com/watch?v=mfgz9PeWC8E&t=660s" target="_blank">11:00-13:40</a>
+        </li>
+        <li>
+          Gift cards/wallet codes not obvious, resorted to search - 
+          <a href="https://www.youtube.com/watch?v=mfgz9PeWC8E&t=1000s" target="_blank">16:40-17:30</a>
+        </li>
+        <li>
+          SteamOS/Linux compatibility list was moderately difficult to find - 
+          <a href="https://www.youtube.com/watch?v=mfgz9PeWC8E&t=1130s" target="_blank">18:50-19:55</a>
+        </li>
+        <li>
+          Commented that the main store is cluttered and hard to tailor to personal needs - 
+          <a href="https://www.youtube.com/watch?v=mfgz9PeWC8E&t=1360s" target="_blank">22:40-23:04</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section id="recommendations">
+      <h1>Six Recommendations</h1>
+      <p class="subtle">Based on patterns from all three interviews</p>
+
+      <h2>My Six Specific Recommendations</h2>
+      <ul>
+        <li><strong>1. Simplify the homepage layout:</strong> Reduce the number of large carousels and banners to make the starting point clearer.</li>
+        <li><strong>2. Add filters directly to the main store page:</strong> Users should not need to visit specific categories to access the filter panel.</li>
+        <li><strong>3. Make the refund policy easy to find:</strong> Add a link near the purchase button or a dedicated section under <em>Support</em></li>
+        <li><strong>4. Group system requirements with other key information:</strong> Move them into the right-side details panel instead of placing them deep in the description.</li>
+        <li><strong>5. Improve visibility for price filters:</strong> Add “Under $20” and other budget shortcuts directly on search and category pages.</li>
+        <li><strong>6. Reorganize secondary sections:</strong> Gift cards, SteamOS/Linux games, and wallet code pages should be easier to locate without searching.</li>
+      </ul>
+    </section>
+
+    <section id="reflection">
+      <h1>Self Reflection</h1>
+
+      <h2>Lessons Learned</h2>
+      <p>
+        This project provided a clearer understanding of the structured workflow that supports effective usability testing. 
+        Completing the heuristic evaluation, personas, scenarios, and recorded sessions showed how interface issues become visible only when real users perform tasks. 
+        Even with a familiar website such as the Steam Store, the process revealed usability gaps related to navigation, filtering, terminology, and information placement.
+      </p>
+
+      <p>
+        Moderating the sessions improved my awareness of how the facilitator influences outcomes. 
+        Remaining neutral, avoiding unintended guidance, and asking follow-up questions required careful attention. 
+        This displayed the importance of standardized test procedures for producing reliable data.
+      </p>
+
+      <h2>Final Thoughts on Usability Testing</h2>
+      <p>
+        The project demonstrated the practical value of observing users directly. 
+        Participants approached tasks differently based on experience level, and these differences highlighted specific areas where the interface created friction. 
+        Overall, the assignment and class strengthened my ability to plan, conduct, and analyze usability tests and emphasized their role in improving real-world digital interfaces.
+      </p>
+    </section>
+  </main>
+</body>
